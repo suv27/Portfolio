@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+*{ margin: 0; padding: 0; user-select: none;}
+body{ font-family: "Roboto", sans-serif; background-color: #400000; }
+
+.bucket .nav-web, .bucket .nav-mob{ width: 100%; height: 70px; background-color: #330000; box-shadow:  0px 3px 25px #FFF; position: fixed; top: 0; left: 0; z-index: 10; }
+.nav-web .navbar-web{ width: 75%; height: 70px; list-style: none; margin: 0 auto; }
+.nav-web .navbar-web .options{ width: 25%; float: left; text-align: center; line-height: 70px; text-transform: uppercase; cursor: pointer; transition: all 0.5s ease; }
+.bucket .header{ width: 100%; height: 700px; margin-top: 70px; background: url('http://markinternational.info/data/out/46/218947091-computer-science-wallpapers.jpg'); background-repeat: no-repeat; background-size: cover; z-index: -1; }
+
+/* THIS APPLY TO BOTH, WEB & MOB */
+.options:hover{ color: #FFF; border-bottom-style: solid; border-bottom-width: thick; border-bottom-color: #FFF; }
+.options.active{ color: #FFF; border-bottom-style: solid; border-bottom-width: thick; border-bottom-color: #FFF; }
+.options a{ color: #FFF; text-decoration: none; }
+
+/* HIDING THE MOBILE VERSION IN THE DESKTOP VERSION */
+.bucket .nav-mob, .bucket .hamburger-btn{ display: none;}
+
+@media screen and (max-width: 700px){
+  .bucket .nav-web{ display: none; }
+  .bucket .nav-mob, .bucket .hamburger-btn{ display: block; }
+  .bucket .hamburger-btn{ position: relative; }
+  .bucket .hamburger-btn .fa-bars, .bucket .hamburger-btn .fa-times{ position: fixed; right: 25px; top: 15px; font-size: 25px; color: #FFF; cursor: pointer; }
+  .bucket .nav-mob .navbar-mob{ margin-top: 60px; background-color: #f9f9f9; display: none; }
+  .bucket .nav-mob .navbar-mob .options{ text-align: center; text-transform: uppercase; padding: 20px; cursor: pointer; }
+  .bucket .nav-mob .navbar-mob.active{ display: block; }
+}
