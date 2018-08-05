@@ -1,0 +1,41 @@
+// MENU BUTTON, HAMBURGER
+.menu-btn{
+  right: 35px;
+  top: 35px;
+  cursor: pointer;
+  position: absolute;
+  z-index: 3;
+  @include easeOut;
+
+    .btn-line{
+      width: 28px;
+      height: 2px;
+      margin: 0 0 5px 0;
+      background-color: #FFF;
+      @include easeOut;
+    }
+
+    // CHANGING HAMBURGER INTO -> 'X'
+    &.close{
+      transform: rotate(180deg);
+
+      .btn-line{
+        // LINE ONE - ROTATE
+        &:nth-child(1){
+          transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        // LINE TWO - HIDE
+        &:nth-child(2){
+          opacity: 0;
+        }
+
+        // LINE 3 - ROTATE
+        &:nth-child(3){
+          transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+
+      }
+    }
+}
