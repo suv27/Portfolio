@@ -34,8 +34,103 @@
         &:nth-child(3){
           transform: rotate(-45deg) translate(5px, -5px);
         }
-
-
       }
     }
+}
+
+// MENU OVERLAY
+.menu{
+  width: 100%;
+  top: 0;
+  opacity: 0.8;
+  visibility: hidden;
+  position: fixed;
+
+  &.show{
+    visibility: visible;
+  }
+
+  &-branding, &-nav{
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    overflow: hidden;
+  }
+
+  &-nav{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: darken($primary-color, 5);
+    transform: translate3d(0, -100%, 0);
+    @include easeOut;
+
+    &.show{
+      // SLIDE IN FROM TOP
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  &-branding{
+    background-color: $primary-color;
+    transform: translate3d(0, 100%, 0);
+    @include easeOut
+
+    &.show{
+      // SLIDE IN FROM BOTTOM
+      transform: translate3d(0, 0, 0);
+    }
+
+    .portrait{
+      width: 250px;
+      height: 250px;
+      background: $portrait-image;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border-radius: 50%;
+      border: 3px solid $secondary-color;
+    }
+  }
+
+  .nav-item{
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    &.show{
+      // SLIDE IN FROM RIGHT
+      transform: translate3d(0, 0, 0);
+    }
+
+    &.current > a{
+      color: $secondary-color;
+    }
+  }
+
+  .nav-linnk{
+    color: #FFF;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+    @include easeOut;
+    padding: 1rem 0;
+    position: relative;
+
+    &:hover{
+      color: $secondary-color;
+    }
+  }
+}
+
+
+// DELAY EACH NAV ITEM SLIDE BY 0.2 SECONDS
+@for $x from 1 through 4{
+  .nav-item:nth-child(#{$x}){
+    transition-delay: $x * 0.2s;
+  }
 }

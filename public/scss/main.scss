@@ -6,10 +6,10 @@
 }
 
 body{
+  height: 100%;
+  color: #FFF;
   @include background;
   background-color: $primary-color;
-  color: #FFF;
-  height: 100%;
   margin: 0;
   line-height: 1.5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
