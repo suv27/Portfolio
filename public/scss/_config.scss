@@ -30,6 +30,15 @@ $backgroung-opacity: 0.5;
   }
 }
 
+// SET TEXT COLOR
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return #000;
+  } @else {
+    @return #FFF;
+  }
+}
+
 // MEDIA QUERIES MINIX
 @mixin mediaSm{
   @media screen and (max-width: 500px){

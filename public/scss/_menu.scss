@@ -11,7 +11,7 @@
       width: 28px;
       height: 2px;
       margin: 0 0 5px 0;
-      background-color: #FFF;
+      background-color: set-text-color($primary-color);
       @include easeOut;
     }
 
@@ -65,7 +65,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    background-color: darken($primary-color, 5);
+    background-color: darken($primary-color, 50);
     transform: translate3d(0, -100%, 0);
     @include easeOut;
 
@@ -76,7 +76,7 @@
   }
 
   &-branding{
-    background-color: $primary-color;
+    background-color: darken($primary-color, 50);
     transform: translate3d(0, 100%, 0);
     @include easeOut
 
@@ -110,8 +110,8 @@
     }
   }
 
-  .nav-linnk{
-    color: #FFF;
+  .nav-link{
+    color: set-text-color($primary-color);
     font-size: 30px;
     font-weight: 300;
     text-transform: uppercase;

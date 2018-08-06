@@ -12,6 +12,26 @@ $(document).ready(() => {
 
 });
 
+toggleCurrent = () => {
+  let base = 'http://localhost:4000';
+  jQuery.address.change((event) => {
+    if (event.value) {
+
+      // remove active class on all nav links
+      $('.nav-item').removeClass('current');
+
+      // get current link and add active class to it
+      $('.nav-item a').each(() => {
+        var dataPath = jQuery(this).attr('href').replace(base, '');
+        $(this).attr('data-path', dataPath);
+        if (dataPath == (event.value)) {
+          $(this).addClass('current');
+        }
+      });
+    }
+  });
+};
+
 toggleMenu = () => {
   if (!showMenu) {
     $('.menu-btn').addClass('close');

@@ -29,6 +29,12 @@ app.get(`/`, (req, res) => {
   });
 });
 
+app.get(`/about`, (req, res) => {
+  res.render('about', {
+
+  });
+});
+
 app.get('*', (req, res) => {
   res.status(404);
   res.send('PAGE NOT FOUND');
