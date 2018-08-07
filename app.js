@@ -28,6 +28,12 @@ app.get(`/projects`, (req, res) => {
   });
 });
 
+app.get(`/contact`, (req, res) => {
+  res.render('contact', {
+
+  });
+});
+
 app.get('*', (req, res) => {
   res.status(404);
   res.send('PAGE NOT FOUND');

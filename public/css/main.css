@@ -178,6 +178,32 @@
   color: #333;
   background-color: #c4c4c4; }
 
+#contact {
+  min-height: calc(100vh - 60px);
+  padding: 4rem;
+  overflow: hidden; }
+  #contact h1 {
+    margin-top: 70px; }
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .boxes div {
+    font-size: 2rem;
+    border: 3px solid #FFF;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .boxes div:hover {
+      padding: 0.5rem 1.5rem;
+      background-color: #EECE1A;
+      color: #000; }
+      .boxes div:hover span {
+        color: #000; }
+
 * {
   box-sizing: border-box; }
 
@@ -283,8 +309,20 @@ header {
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
+  #projects {
+    align-items: center;
+    text-align: center; }
+    #projects .lg-heading {
+      line-height: 1em;
+      margin-bottom: 1rem; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); } }
+    grid-template-columns: repeat(2, 1fr); }
+  #contact {
+    align-items: center;
+    text-align: center; }
+    #contact .lg-heading {
+      line-height: 1em;
+      margin-bottom: 1rem; } }
 
 @media screen and (max-width: 500px) {
   #home h1 {
