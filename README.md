@@ -1,7 +1,7 @@
 # Portfolio-SUV
 ### Requirements
  * Make sure you have installed `node && npm `
-  * If not then follow click here [nodeJS](http://https://nodejs.org/en/)。
+  * If not then follow click here [nodeJS](https://www.npmjs.com/get-npm)。
 
 # How to run it
 * Clone the repo
