@@ -7,6 +7,10 @@
 
 // DESKTOP AND LAPTOPS
 @include mediaLg{
+  header{
+    display: none;
+  }
+
   .projects{
     grid-template-columns: repeat(3, 1fr);
   }
@@ -14,7 +18,11 @@
 
 // TABLETS AND SMALL LAPTOPS
 @include mediaMd{
-  #home{
+  .bucket{
+    display: none;
+  }
+
+  #home, #about, #projects, #contact{
     align-items: center;
     text-align: center;
 
@@ -54,16 +62,6 @@
     }
   }
 
-  #about{
-    align-items: center;
-    text-align: center;
-
-    .lg-heading{
-      line-height: 1em;
-      margin-bottom: 1rem;
-    }
-  }
-
   .about-info{
     grid-template-areas:
       'bioimage'
@@ -75,37 +73,27 @@
 
   }
 
-  #projects{
-    align-items: center;
-    text-align: center;
-
-    .lg-heading{
-      line-height: 1em;
-      margin-bottom: 1rem;
-    }
-  }
-
-
   .projects{
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  #contact{
-    align-items: center;
-    text-align: center;
-
-    .lg-heading{
-      line-height: 1em;
-      margin-bottom: 1rem;
-    }
   }
 }
 
 // SMATPHONES
 @include mediaSm{
-  #home h1{
-    margin-top: 10vh;
+
+  #home, #about, #projects, #contact{
+    padding: 2rem;
+
+    h1{
+      margin-top: 10vh;
+    }
+
+    .lg-heading {
+      margin-top: 5rem;
+      font-size: 5rem;
+    }
   }
+
 
   .projects{
     grid-template-columns: 1fr;

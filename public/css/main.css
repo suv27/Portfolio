@@ -5,10 +5,12 @@
   position: absolute;
   z-index: 3;
   transition: all 0.5s ease-out; }
+  .menu-btn:hover .btn-line {
+    background-color: #34b7f1; }
   .menu-btn .btn-line {
     width: 28px;
     height: 2px;
-    margin: 0 0 5px 0;
+    margin: 0 0 5px;
     background-color: #FFF;
     transition: all 0.5s ease-out; }
   .menu-btn.close {
@@ -59,14 +61,14 @@
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: 50%;
-      border: 3px solid #EECE1A; }
+      border: 3px solid #010149; }
   .menu .nav-item {
     transform: translate3d(600px, 0, 0);
     transition: all 0.5s ease-out; }
     .menu .nav-item.show {
       transform: translate3d(0, 0, 0); }
     .menu .nav-item.current > a {
-      color: #EECE1A; }
+      color: #010149; }
   .menu .nav-link {
     color: #FFF;
     font-size: 30px;
@@ -78,7 +80,7 @@
     padding: 1rem 0;
     position: relative; }
     .menu .nav-link:hover {
-      color: #EECE1A; }
+      color: #34b7f1; }
 
 .nav-item:nth-child(1) {
   transition-delay: 0.2s; }
@@ -92,6 +94,43 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.8s; }
 
+.nav-web {
+  width: 100%;
+  height: 70px;
+  background-color: #010149;
+  box-shadow: 0px 3px 25px #34b7f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10; }
+  .nav-web:hover {
+    height: 90px;
+    transition: all 0.5s ease-out; }
+  .nav-web .navbar-web {
+    width: 75%;
+    height: 70px;
+    list-style: none;
+    margin: 0 auto; }
+    .nav-web .navbar-web:hover {
+      padding-top: 20px;
+      transition: all 0.5s ease-out; }
+    .nav-web .navbar-web .options {
+      width: 25%;
+      float: left;
+      text-align: center;
+      line-height: 70px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.5s ease; }
+      .nav-web .navbar-web .options:hover, .nav-web .navbar-web .options .active {
+        border-bottom: 5px solid #FFF; }
+        .nav-web .navbar-web .options:hover a, .nav-web .navbar-web .options .active a {
+          padding: 40px 95px 20px 95px; }
+      .nav-web .navbar-web .options a {
+        color: #FFF;
+        padding: 24px;
+        text-decoration: none; }
+
 #about {
   min-height: calc(100vh - 60px);
   padding: 4rem;
@@ -101,7 +140,7 @@
     #about .icons a {
       padding: 0.4rem; }
       #about .icons a:hover {
-        color: #EECE1A;
+        color: #010149;
         transition: all 0.5s ease-out; }
   #about h1 {
     margin-top: 70px; }
@@ -116,15 +155,15 @@
     width: auto;
     border-radius: 50%;
     margin: auto;
-    border: 3px solid #EECE1A; }
+    border: 3px solid #010149; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem;
     text-align: center; }
   .about-info .job {
-    border-bottom: 5px solid #EECE1A;
+    border-bottom: 5px solid #010149;
     padding: 0.5rem;
-    background-color: #515151;
+    background-color: #061a58;
     text-align: center;
     -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); }
@@ -134,13 +173,6 @@
     grid-area: job2; }
   .about-info .job-3 {
     grid-area: job3; }
-
-.main-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: black;
-  color: #FFF;
-  height: 65px; }
 
 #projects {
   min-height: calc(100vh - 60px);
@@ -158,7 +190,7 @@
     border: 3px solid #FFF; }
     .projects img:hover {
       opacity: 0.5;
-      border-color: #EECE1A;
+      border-color: #010149;
       transition: all 0.5s ease-out; }
 
 .btn, .btn-dark, .btn-light {
@@ -167,8 +199,8 @@
   margin-bottom: 0.3rem;
   padding: 0.5rem 1rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background-color: #EECE1A;
-    color: #000; }
+    background-color: #010149;
+    color: #FFF; }
 
 .btn-dark {
   color: #FFF;
@@ -176,7 +208,7 @@
 
 .btn-light {
   color: #333;
-  background-color: #c4c4c4; }
+  background-color: #4f78f4; }
 
 #contact {
   min-height: calc(100vh - 60px);
@@ -198,9 +230,9 @@
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
+      color: #000;
       padding: 0.5rem 1.5rem;
-      background-color: #EECE1A;
-      color: #000; }
+      background-color: #34b7f1; }
       .boxes div:hover span {
         color: #000; }
 
@@ -210,7 +242,7 @@
 body {
   height: 100%;
   color: #FFF;
-  background-color: #444;
+  background-color: #041340;
   margin: 0;
   line-height: 1.5;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -224,7 +256,7 @@ body {
       height: 100%;
       top: 0;
       right: 0;
-      background-color: rgba(68, 68, 68, 0.5);
+      background-color: rgba(4, 19, 64, 0.5);
       position: absolute;
       z-index: -1; }
 
@@ -236,7 +268,7 @@ h1, h2, h3 {
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background-color: rgba(73, 73, 73, 0.5); }
+    background-color: rgba(10, 48, 160, 0.5); }
 
 a {
   color: #FFF;
@@ -248,7 +280,8 @@ header {
   z-index: 2; }
 
 .text-secondary {
-  color: #EECE1A; }
+  color: #34b7f1;
+  text-shadow: 2px 2px #FFF; }
 
 #home {
   height: 100%;
@@ -256,27 +289,48 @@ header {
   overflow: hidden; }
   #home .icons {
     margin-top: 1rem; }
-    #home .icons a {
+    #home .icons .fab {
       padding: 0.4rem; }
-      #home .icons a:hover {
-        color: #EECE1A;
-        transition: all 0.5s ease-out; }
+    #home .icons .fa-twitter:hover {
+      color: #1da1f2; }
+    #home .icons .fa-facebook:hover {
+      color: #3b5998; }
+    #home .icons .fa-linkedin:hover {
+      color: #007bb5; }
+    #home .icons .fa-github:hover {
+      color: #333; }
+    #home .icons .fa-instagram:hover {
+      color: #c32aa3; }
   #home h1 {
     margin-top: 200px; }
+
+.main-footer {
+  height: 60px;
+  text-align: center;
+  padding: 1.4rem;
+  font-size: 12px;
+  color: #FFF;
+  background-color: #072170;
+  border-bottom: 3px solid #34b7f1;
+  box-shadow: 0 0 50px #fff; }
 
 @media screen and (min-width: 1171px) {
   .projects {
     grid-template-columns: repeat(4, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
+  header {
+    display: none; }
   .projects {
     grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (max-width: 768px) {
-  #home {
+  .bucket {
+    display: none; }
+  #home, #about, #projects, #contact {
     align-items: center;
     text-align: center; }
-    #home .lg-heading {
+    #home .lg-heading, #about .lg-heading, #projects .lg-heading, #contact .lg-heading {
       line-height: 1em;
       margin-bottom: 1rem; }
   ul.menu-nav,
@@ -300,32 +354,19 @@ header {
       background: url("/imgs/portrait.jpeg");
       background-repeat: no-repeat;
       background-size: cover; }
-  #about {
-    align-items: center;
-    text-align: center; }
-    #about .lg-heading {
-      line-height: 1em;
-      margin-bottom: 1rem; }
   .about-info {
     grid-template-areas: 'bioimage' 'bio' 'job1' 'job2' 'job3';
     grid-template-columns: 1fr; }
-  #projects {
-    align-items: center;
-    text-align: center; }
-    #projects .lg-heading {
-      line-height: 1em;
-      margin-bottom: 1rem; }
   .projects {
-    grid-template-columns: repeat(2, 1fr); }
-  #contact {
-    align-items: center;
-    text-align: center; }
-    #contact .lg-heading {
-      line-height: 1em;
-      margin-bottom: 1rem; } }
+    grid-template-columns: repeat(2, 1fr); } }
 
 @media screen and (max-width: 500px) {
-  #home h1 {
-    margin-top: 10vh; }
+  #home, #about, #projects, #contact {
+    padding: 2rem; }
+    #home h1, #about h1, #projects h1, #contact h1 {
+      margin-top: 10vh; }
+    #home .lg-heading, #about .lg-heading, #projects .lg-heading, #contact .lg-heading {
+      margin-top: 5rem;
+      font-size: 5rem; }
   .projects {
     grid-template-columns: 1fr; } }
