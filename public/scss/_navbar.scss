@@ -153,6 +153,12 @@
   &:hover{
     height: 90px;
     @include easeOut;
+
+    .navbar-web{
+      padding-top: 20px;
+      @include easeOut;
+    }
+
   }
 
   .navbar-web{
@@ -161,33 +167,28 @@
     list-style: none;
     margin: 0 auto;
 
-    &:hover{
-      padding-top: 20px;
-      @include easeOut;
-    }
 
     .options{
       width: 25%;
       float: left;
+      font-weight: 600;
       text-align: center;
       line-height: 70px;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.5s ease;
 
-      &:hover, .active{
-        border-bottom: 5px solid #FFF;
-
-        a{
-          padding: 40px 95px 20px 95px;
-        }
-      }
-
       a{
         color: #FFF;
-        padding: 24px;
+        padding: 40px 95px 20px 95px;
         text-decoration: none;
+
+        &:hover, .active{
+          border-bottom: 5px solid steelblue;
+          color: steelblue;
+        }
       }
     }
   }
+
 }

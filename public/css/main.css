@@ -106,30 +106,30 @@
   .nav-web:hover {
     height: 90px;
     transition: all 0.5s ease-out; }
+    .nav-web:hover .navbar-web {
+      padding-top: 20px;
+      transition: all 0.5s ease-out; }
   .nav-web .navbar-web {
     width: 75%;
     height: 70px;
     list-style: none;
     margin: 0 auto; }
-    .nav-web .navbar-web:hover {
-      padding-top: 20px;
-      transition: all 0.5s ease-out; }
     .nav-web .navbar-web .options {
       width: 25%;
       float: left;
+      font-weight: 600;
       text-align: center;
       line-height: 70px;
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.5s ease; }
-      .nav-web .navbar-web .options:hover, .nav-web .navbar-web .options .active {
-        border-bottom: 5px solid #FFF; }
-        .nav-web .navbar-web .options:hover a, .nav-web .navbar-web .options .active a {
-          padding: 40px 95px 20px 95px; }
       .nav-web .navbar-web .options a {
         color: #FFF;
-        padding: 24px;
+        padding: 40px 95px 20px 95px;
         text-decoration: none; }
+        .nav-web .navbar-web .options a:hover, .nav-web .navbar-web .options a .active {
+          border-bottom: 5px solid steelblue;
+          color: steelblue; }
 
 #about {
   min-height: calc(100vh - 60px);
