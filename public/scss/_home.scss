@@ -1,0 +1,36 @@
+#home{
+  min-height: 100%;
+  padding: 4rem;
+  overflow: hidden; // FOR NO SCROLL BARS
+  .icons{
+    margin-top: 1rem;
+
+    .fab{
+      padding: 0.4rem;
+    }
+
+    .fa-twitter:hover{
+      color: #1da1f2;
+    }
+
+    .fa-facebook:hover{
+      color: #3b5998;
+    }
+
+    .fa-linkedin:hover{
+      color: #007bb5;
+    }
+
+    .fa-github:hover{
+      color: #333;
+    }
+
+    .fa-instagram:hover{
+      color: #c32aa3;
+    }
+  }
+
+  h1{
+    margin-top: 200px;
+  }
+}
