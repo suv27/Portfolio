@@ -1,7 +1,7 @@
 // WIDESCREEN
 @include mediaXl{
   .projects{
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -29,6 +29,38 @@
     .lg-heading{
       line-height: 1em;
       margin-bottom: 1rem;
+    }
+
+    .icons{
+      display: block;
+
+      .fab{
+        padding: 0.8rem;
+
+        &.fa-twitter{
+          color: #1da1f2;
+        }
+
+        &.fa-facebook{
+          color: #3b5998;
+        }
+
+        &.fa-linkedin{
+          color: #007bb5;
+        }
+
+        &.fa-github{
+          color: #333;
+        }
+
+        &.fa-instagram{
+          color: #c32aa3;
+        }
+      }
+
+      .slider{
+        opacity: 0;
+      }
     }
   }
 
@@ -91,6 +123,38 @@
     .lg-heading {
       margin-top: 5rem;
       font-size: 5rem;
+    }
+
+    .icons{
+      display: block;
+
+      .fab{
+        padding: 0.8rem;
+
+        &.fa-twitter{
+          color: #1da1f2;
+        }
+
+        &.fa-facebook{
+          color: #3b5998;
+        }
+
+        &.fa-linkedin{
+          color: #007bb5;
+        }
+
+        &.fa-github{
+          color: #333;
+        }
+
+        &.fa-instagram{
+          color: #c32aa3;
+        }
+      }
+
+      .slider{
+        opacity: 0;
+      }
     }
   }
 

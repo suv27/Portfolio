@@ -124,20 +124,23 @@
       text-transform: uppercase;
       cursor: pointer;
       transition: all 0.5s ease; }
-      .nav-web .navbar-web .options a {
-        color: #FFF;
-        padding: 40px 95px 20px 95px;
-        text-decoration: none; }
-        .nav-web .navbar-web .options a:hover, .nav-web .navbar-web .options a .active {
-          border-bottom: 5px solid steelblue;
-          color: steelblue; }
+      .nav-web .navbar-web .options:hover, .nav-web .navbar-web .options .active {
+        border-bottom: 5px solid steelblue; }
+        .nav-web .navbar-web .options:hover a, .nav-web .navbar-web .options .active a {
+          color: steelblue;
+          padding: 40px 30px 20px 30px; }
+    .nav-web .navbar-web .active {
+      border-bottom: 5px solid steelblue; }
+      .nav-web .navbar-web .active a {
+        color: steelblue; }
 
 #home {
   min-height: 100%;
   padding: 4rem;
   overflow: hidden; }
   #home .icons {
-    margin-top: 1rem; }
+    margin-top: 1rem;
+    display: grid; }
     #home .icons .fab {
       padding: 0.4rem; }
     #home .icons .fa-twitter:hover {
@@ -150,6 +153,41 @@
       color: #333; }
     #home .icons .fa-instagram:hover {
       color: #c32aa3; }
+    #home .icons .slider {
+      position: absolute;
+      width: 0px;
+      height: 40px;
+      left: 7em;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 3px;
+      transform: translate(0, -100%);
+      transition: all 0.5s ease; }
+      #home .icons .slider p {
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 900;
+        padding: 0;
+        margin: 0;
+        opacity: 0; }
+    #home .icons a {
+      width: 43px; }
+      #home .icons a:hover .slider {
+        width: 180px;
+        transition: all 0.5s ease; }
+        #home .icons a:hover .slider p {
+          opacity: 1;
+          transition: all 1s 0.2s ease; }
+        #home .icons a:hover .slider.facebook {
+          background-color: #3b5998; }
+        #home .icons a:hover .slider.instagram {
+          background-color: #c32aa3; }
+        #home .icons a:hover .slider.linkedin {
+          background-color: #007bb5; }
+        #home .icons a:hover .slider.github {
+          background-color: #333; }
+        #home .icons a:hover .slider.twitter {
+          background-color: #1da1f2; }
   #home h1 {
     margin-top: 200px; }
 
@@ -170,8 +208,8 @@
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio bio' 'job1 job2 job3';
-  grid-template-columns: repeat(3, 1fr); }
+  grid-template-areas: 'bioimage bio' 'job1 job2';
+  grid-template-columns: repeat(2, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
     width: auto;
@@ -183,18 +221,18 @@
     font-size: 1.5rem;
     text-align: center; }
   .about-info .job {
-    border-bottom: 5px solid #010149;
     padding: 0.5rem;
-    background-color: #061a58;
     text-align: center;
-    -webkit-box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); }
+    background-color: #002b80;
+    padding: 2rem; }
+    .about-info .job img {
+      width: 100px;
+      border-radius: 20px;
+      margin-top: 10px; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
     grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
 
 #projects {
   min-height: calc(100vh - 60px);
@@ -208,8 +246,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 0.7rem; }
   .projects img {
-    width: 100%;
-    border: 3px solid #FFF; }
+    width: 100%; }
     .projects img:hover {
       opacity: 0.5;
       border-color: #010149;
@@ -221,16 +258,18 @@
   margin-bottom: 0.3rem;
   padding: 0.5rem 1rem; }
   .btn:hover, .btn-dark:hover, .btn-light:hover {
-    background-color: #010149;
-    color: #FFF; }
+    color: #FFF;
+    padding: 5px;
+    background-color: #041340;
+    border: 1px solid #34b7f1; }
 
 .btn-dark {
   color: #FFF;
   background-color: black; }
 
 .btn-light {
-  color: #333;
-  background-color: #4f78f4; }
+  color: #000;
+  background-color: #4cbff3; }
 
 #contact {
   min-height: calc(100vh - 60px);
@@ -317,7 +356,7 @@ header {
 
 @media screen and (min-width: 1171px) {
   .projects {
-    grid-template-columns: repeat(4, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); } }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
   header {
@@ -334,6 +373,22 @@ header {
     #home .lg-heading, #about .lg-heading, #projects .lg-heading, #contact .lg-heading {
       line-height: 1em;
       margin-bottom: 1rem; }
+    #home .icons, #about .icons, #projects .icons, #contact .icons {
+      display: block; }
+      #home .icons .fab, #about .icons .fab, #projects .icons .fab, #contact .icons .fab {
+        padding: 0.8rem; }
+        #home .icons .fab.fa-twitter, #about .icons .fab.fa-twitter, #projects .icons .fab.fa-twitter, #contact .icons .fab.fa-twitter {
+          color: #1da1f2; }
+        #home .icons .fab.fa-facebook, #about .icons .fab.fa-facebook, #projects .icons .fab.fa-facebook, #contact .icons .fab.fa-facebook {
+          color: #3b5998; }
+        #home .icons .fab.fa-linkedin, #about .icons .fab.fa-linkedin, #projects .icons .fab.fa-linkedin, #contact .icons .fab.fa-linkedin {
+          color: #007bb5; }
+        #home .icons .fab.fa-github, #about .icons .fab.fa-github, #projects .icons .fab.fa-github, #contact .icons .fab.fa-github {
+          color: #333; }
+        #home .icons .fab.fa-instagram, #about .icons .fab.fa-instagram, #projects .icons .fab.fa-instagram, #contact .icons .fab.fa-instagram {
+          color: #c32aa3; }
+      #home .icons .slider, #about .icons .slider, #projects .icons .slider, #contact .icons .slider {
+        opacity: 0; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -369,5 +424,21 @@ header {
     #home .lg-heading, #about .lg-heading, #projects .lg-heading, #contact .lg-heading {
       margin-top: 5rem;
       font-size: 5rem; }
+    #home .icons, #about .icons, #projects .icons, #contact .icons {
+      display: block; }
+      #home .icons .fab, #about .icons .fab, #projects .icons .fab, #contact .icons .fab {
+        padding: 0.8rem; }
+        #home .icons .fab.fa-twitter, #about .icons .fab.fa-twitter, #projects .icons .fab.fa-twitter, #contact .icons .fab.fa-twitter {
+          color: #1da1f2; }
+        #home .icons .fab.fa-facebook, #about .icons .fab.fa-facebook, #projects .icons .fab.fa-facebook, #contact .icons .fab.fa-facebook {
+          color: #3b5998; }
+        #home .icons .fab.fa-linkedin, #about .icons .fab.fa-linkedin, #projects .icons .fab.fa-linkedin, #contact .icons .fab.fa-linkedin {
+          color: #007bb5; }
+        #home .icons .fab.fa-github, #about .icons .fab.fa-github, #projects .icons .fab.fa-github, #contact .icons .fab.fa-github {
+          color: #333; }
+        #home .icons .fab.fa-instagram, #about .icons .fab.fa-instagram, #projects .icons .fab.fa-instagram, #contact .icons .fab.fa-instagram {
+          color: #c32aa3; }
+      #home .icons .slider, #about .icons .slider, #projects .icons .slider, #contact .icons .slider {
+        opacity: 0; }
   .projects {
     grid-template-columns: 1fr; } }

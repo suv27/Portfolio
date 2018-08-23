@@ -16,7 +16,6 @@
 
   img{
     width: 100%;
-    border: 3px solid #FFF;
 
     &:hover{
       opacity: 0.5;
@@ -24,6 +23,7 @@
       @include easeOut;
     }
   }
+
 }
 
 .btn{
@@ -33,8 +33,10 @@
   padding: 0.5rem 1rem;
 
   &:hover{
-    background-color: $secondary-color;
-    color: set-text-color($secondary-color);
+    color: #FFF;
+    padding: 5px;
+    background-color: $primary-color;
+    border: 1px solid $span-color;
   }
 }
 
@@ -46,6 +48,6 @@
 
 .btn-light{
   @extend .btn;
-  color: #333;
-  background-color: lighten($primary-color, 50);
+  color: #000;
+  background-color: lighten($span-color, 5);
 }

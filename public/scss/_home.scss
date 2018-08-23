@@ -2,8 +2,10 @@
   min-height: 100%;
   padding: 4rem;
   overflow: hidden; // FOR NO SCROLL BARS
+
   .icons{
     margin-top: 1rem;
+    display: grid;
 
     .fab{
       padding: 0.4rem;
@@ -27,6 +29,64 @@
 
     .fa-instagram:hover{
       color: #c32aa3;
+    }
+
+    .slider {
+      position: absolute;
+      width: 0px;
+      height: 40px;
+      left: 7em;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 3px;
+      transform: translate( 0, -100%);
+      transition: all 0.5s ease;
+
+      p{
+        text-transform: uppercase;
+        font-size: 0.8em;
+        font-weight: 900;
+        padding: 0;
+        margin: 0;
+        opacity: 0;
+      }
+    }
+
+    a{
+      width: 43px;
+
+      &:hover{
+
+        .slider{
+          width: 180px;
+          transition: all 0.5s ease;
+
+          p{
+            opacity: 1;
+            transition: all 1s 0.2s ease;
+          }
+
+          &.facebook{
+            background-color: #3b5998;
+          }
+
+          &.instagram{
+            background-color: #c32aa3;
+          }
+
+          &.linkedin{
+            background-color: #007bb5;
+          }
+
+          &.github{
+            background-color: #333;
+          }
+
+          &.twitter{
+            background-color: #1da1f2;
+          }
+        }
+      }
     }
   }
 
