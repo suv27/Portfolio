@@ -8,7 +8,7 @@
  * Run `npm install` to get all the modules
  * All needed dependencies will be installed.
  * Download all the dependencies needed to run the web app.
-  *Nodemon*
+  *Nodemon* 
   *pg*
 
  * Run `npm start`
