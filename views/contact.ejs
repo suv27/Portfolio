@@ -29,7 +29,30 @@
         <span class="text-secondary">Phone:
         </span>(929) 228 - 9363
       </div>
+
+      <div>
+        <a onclick="window.open('https://drive.google.com/open?id=1YC-zK7fBxloX_rSkFmTkWmr2WGmv4-8j61y_wFyv4hw')">
+          <span>Download Resume</span>
+        </a>
+      </div>
     </div>
+
+    <!-- Form for direct emails -->
+    <form class="sendEmail" action="index.html" method="post">
+      <div>
+        <label for="emailInput">Email</label>
+        <input id="emailInput" type="email" placeholder="Your Email">
+        <br>
+      </div>
+      <div>
+        <label for="textAreaInput">Message</label>
+        <textarea id="textAreaInput" type="text" placeholder="Your Message" ></textarea>
+        <br>
+      </div>
+      <div>
+        <button class="btn-send" type="submit">Send</button>
+      </div>
+    </form>
   </div>
 
   <%- include('partials/footer.ejs') %>

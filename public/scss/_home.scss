@@ -5,7 +5,8 @@
 
   .icons{
     margin-top: 1rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 
     .fab{
       padding: 0.4rem;

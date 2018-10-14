@@ -140,7 +140,8 @@
   overflow: hidden; }
   #home .icons {
     margin-top: 1rem;
-    display: grid; }
+    display: flex;
+    flex-direction: column; }
     #home .icons .fab {
       padding: 0.4rem; }
     #home .icons .fa-twitter:hover {
@@ -208,7 +209,7 @@
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio' 'job1 job2';
+  grid-template-areas: 'bioimage bio' 'job1 job2' 'job3';
   grid-template-columns: repeat(2, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -233,6 +234,8 @@
     grid-area: job1; }
   .about-info .job-2 {
     grid-area: job2; }
+  .about-info .job-3 {
+    grid-area: job3; }
 
 #projects {
   min-height: calc(100vh - 60px);
@@ -273,7 +276,7 @@
 
 #contact {
   min-height: calc(100vh - 60px);
-  padding: 4rem;
+  padding: 4rem 4rem 1rem 4rem;
   overflow: hidden; }
   #contact h1 {
     margin-top: 70px; }
@@ -284,6 +287,8 @@
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem; }
+  .boxes a {
+    cursor: pointer; }
   .boxes div {
     font-size: 2rem;
     border: 3px solid #FFF;
@@ -296,6 +301,29 @@
       background-color: #34b7f1; }
       .boxes div:hover span {
         color: #000; }
+
+.sendEmail {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center; }
+  .sendEmail div {
+    width: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center; }
+    .sendEmail div #emailInput {
+      width: 100%;
+      height: 40px;
+      font-size: 18px; }
+    .sendEmail div #textAreaInput {
+      width: 100%;
+      height: 200px; }
+    .sendEmail div .btn-send {
+      width: 120px;
+      height: 30px;
+      border: 1px solid #010149;
+      border-radius: 20px; }
 
 * {
   box-sizing: border-box; }

@@ -1,6 +1,6 @@
 #contact {
   min-height: calc(100vh - 60px);
-  padding: 4rem;
+  padding: 4rem 4rem 1rem 4rem;
   overflow: hidden; // FOR NO SCROLL BARS
 
   h1 {
@@ -14,6 +14,10 @@
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem;
+
+  a{
+    cursor: pointer;
+  }
 
   div{
     font-size: 2rem;
@@ -30,6 +34,42 @@
       span{
         color: set-text-color($span-color);
       }
+    }
+  }
+}
+
+.sendEmail{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+
+  div{
+    width: 500px;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+
+    label{
+
+    }
+
+    #emailInput{
+      width: 100%;
+      height: 40px;
+      font-size: 18px;
+    }
+
+    #textAreaInput{
+      width: 100%;
+      height: 200px;
+    }
+
+    .btn-send{
+      width: 120px;
+      height: 30px;
+      border: 1px solid $secondary-color;
+      border-radius: 20px;
     }
   }
 }
