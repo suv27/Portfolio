@@ -1,3 +1,11 @@
+@keyframes anime {
+  0% {
+    border: 2px solid salmon;
+    background: #fdd9d5; }
+  100% {
+    border: 2px solid #fdd9d5;
+    background: salmon; } }
+
 .menu-btn {
   right: 35px;
   top: 35px;
@@ -209,7 +217,7 @@
 .about-info {
   display: grid;
   grid-gap: 30px;
-  grid-template-areas: 'bioimage bio' 'job1 job2' 'job3';
+  grid-template-areas: 'bioimage bio' 'job1 job2';
   grid-template-columns: repeat(2, 1fr); }
   .about-info .bio-image {
     grid-area: bioimage;
@@ -234,8 +242,6 @@
     grid-area: job1; }
   .about-info .job-2 {
     grid-area: job2; }
-  .about-info .job-3 {
-    grid-area: job3; }
 
 #projects {
   min-height: calc(100vh - 60px);
@@ -303,27 +309,44 @@
         color: #000; }
 
 .sendEmail {
+  width: 60%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center; }
   .sendEmail div {
-    width: 500px;
+    width: 80%;
     display: flex;
     flex-flow: column wrap;
     align-items: center; }
+    .sendEmail div label {
+      color: #34b7f1;
+      font-size: 24px;
+      font-weight: bolder;
+      display: flex;
+      align-self: flex-start; }
+    .sendEmail div #emailInput, .sendEmail div #textAreaInput {
+      width: 100%;
+      font-size: 18px;
+      border-radius: 15px;
+      padding: 10px;
+      outline: none;
+      box-shadow: 0 0 10px 0 #34b7f1; }
     .sendEmail div #emailInput {
-      width: 100%;
-      height: 40px;
-      font-size: 18px; }
+      height: 40px; }
     .sendEmail div #textAreaInput {
-      width: 100%;
       height: 200px; }
     .sendEmail div .btn-send {
       width: 120px;
       height: 30px;
       border: 1px solid #010149;
       border-radius: 20px; }
+      .sendEmail div .btn-send:hover {
+        animation: anime;
+        animation-duration: 1.5s;
+        animation-iteration-count: 5;
+        transition: all 0.5s ease-out; }
 
 * {
   box-sizing: border-box; }
@@ -390,7 +413,9 @@ header {
   header {
     display: none; }
   .projects {
-    grid-template-columns: repeat(3, 1fr); } }
+    grid-template-columns: repeat(3, 1fr); }
+  .sendEmail {
+    width: 80%; } }
 
 @media screen and (max-width: 768px) {
   .bucket {
@@ -417,6 +442,8 @@ header {
           color: #c32aa3; }
       #home .icons .slider, #about .icons .slider, #projects .icons .slider, #contact .icons .slider {
         opacity: 0; }
+    #home .sendEmail, #about .sendEmail, #projects .sendEmail, #contact .sendEmail {
+      width: 100%; }
   ul.menu-nav,
   div.menu-branding {
     float: none;
@@ -468,5 +495,7 @@ header {
           color: #c32aa3; }
       #home .icons .slider, #about .icons .slider, #projects .icons .slider, #contact .icons .slider {
         opacity: 0; }
+    #home .sendEmail, #about .sendEmail, #projects .sendEmail, #contact .sendEmail {
+      width: 100%; }
   .projects {
     grid-template-columns: 1fr; } }

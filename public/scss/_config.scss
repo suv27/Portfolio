@@ -10,6 +10,17 @@ $backgroung-opacity: 0.5;
   transition: all 0.5s ease-out;
 }
 
+@keyframes anime{
+  0%{
+    border: 2px solid salmon;
+    background: lighten(salmon, 20);
+  }
+  100%{
+    border: 2px solid lighten(salmon, 20);;
+    background: salmon;
+  }
+}
+
 @mixin background{
   @if $show-home-image{
     &#bg-image{
