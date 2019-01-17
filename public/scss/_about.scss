@@ -54,6 +54,13 @@
       border-radius: 20px;
       margin-top: 10px;
     }
+
+    ul{
+      *{
+        list-style: none;
+        float: left;
+      }
+    }
   }
 
   .job-1 {

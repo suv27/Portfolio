@@ -2,6 +2,7 @@ const express = require(`express`);
 const app = express();
 const port = 4000;
 const parser = require('body-parser');
+const nodemailer = require('nodemailer');
 app.use(parser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
@@ -32,6 +33,38 @@ app.get(`/contact`, (req, res) => {
 
   });
 });
+
+app.post('/contact/send', (req, res) => {
+
+  let name = req.body.name;
+  let email = req.body.email;
+  let message = req.body.message;
+
+  let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'starlinu33@gmail.com',
+      pass: 'jesucristos'
+    }
+  })
+
+  let mailOptions = {
+    from: name,
+    to: 'starlinu33@gmail.com',
+    subject: 'Website Submission',
+    html: '<p>You have a submission with the following details...</p><ul><li>Name: ' + name + '</li><li>Email: ' + email + '</li><li>Message: ' + message + '</li></ul>',
+  }
+
+  transporter.sendMail(mailOptions, (error, info) => {
+    if(error){
+      console.log(error);
+      res.redirect('/');
+    } else {
+      console.log('Message sent: ' + info.response);
+      res.redirect('/');
+    }
+  })
+})
 
 app.get('*', (req, res) => {
   res.status(404);

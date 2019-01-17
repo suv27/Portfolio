@@ -38,15 +38,20 @@
     </div>
 
     <!-- Form for direct emails -->
-    <form class="sendEmail" action="mailto:urenav33@gmail.com?subject=From_Web_Page" enctype="text/plain">
+    <form class="sendEmail" method="POST" action="contact/send">
+      <div>
+          <label for="nameInput">Name</label>
+          <input id="nameInput" type="text" name="name" placeholder="Your Name" >
+          <br>
+        </div>
       <div>
         <label for="emailInput">Email</label>
-        <input id="emailInput" type="email" placeholder="Your Email" required="true">
+        <input id="emailInput" type="email" name="email" placeholder="Your Email" >
         <br>
       </div>
       <div>
         <label for="textAreaInput">Message</label>
-        <textarea id="textAreaInput" type="text" placeholder="Your Message" required="true"></textarea>
+        <textarea id="textAreaInput" type="text" name="message" placeholder="Your Message" ></textarea>
         <br>
       </div>
       <div>

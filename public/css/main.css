@@ -238,6 +238,9 @@
       width: 100px;
       border-radius: 20px;
       margin-top: 10px; }
+    .about-info .job ul * {
+      list-style: none;
+      float: left; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -296,7 +299,9 @@
   .boxes a {
     cursor: pointer; }
   .boxes div {
-    font-size: 2rem;
+    width: 390px;
+    font-size: 1.5rem;
+    text-align: center;
     border: 3px solid #FFF;
     padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
@@ -326,15 +331,13 @@
       font-weight: bolder;
       display: flex;
       align-self: flex-start; }
-    .sendEmail div #emailInput, .sendEmail div #textAreaInput {
+    .sendEmail div #nameInput, .sendEmail div #emailInput, .sendEmail div #textAreaInput {
       width: 100%;
       font-size: 18px;
       border-radius: 15px;
       padding: 10px;
       outline: none;
       box-shadow: 0 0 10px 0 #34b7f1; }
-    .sendEmail div #emailInput {
-      height: 40px; }
     .sendEmail div #textAreaInput {
       height: 200px; }
     .sendEmail div .btn-send {
@@ -349,6 +352,7 @@
         transition: all 0.5s ease-out; }
 
 * {
+  margin: 0;
   box-sizing: border-box; }
 
 body {
