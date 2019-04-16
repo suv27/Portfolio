@@ -48,8 +48,9 @@ app.post('/contact/send', (req, res) => {
     }
   })
 
+  console.log("name" + name);
+
   let mailOptions = {
-    from: name,
     to: 'starlinu33@gmail.com',
     subject: 'Website Submission',
     html: '<p>You have a submission with the following details...</p><ul><li>Name: ' + name + '</li><li>Email: ' + email + '</li><li>Message: ' + message + '</li></ul>',
@@ -61,6 +62,9 @@ app.post('/contact/send', (req, res) => {
       res.redirect('/');
     } else {
       console.log('Message sent: ' + info.response);
+
+      // create a popup box where it says message sent
+
       res.redirect('/');
     }
   })
