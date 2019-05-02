@@ -48,8 +48,6 @@ app.post('/contact/send', (req, res) => {
     }
   })
 
-  console.log("name" + name);
-
   let mailOptions = {
     to: 'starlinu33@gmail.com',
     subject: 'Website Submission',
