@@ -68,11 +68,10 @@ app.post('/contact/send', (req, res) => {
   })
 })
 
-app.get('*', (req, res) => {
-  res.status(404);
-  res.send('PAGE NOT FOUND');
+app.use((req, res) => {
+  res.status(404).send('PAGE NOT FOUND');
 });
 
-app.listen(process.env.PORT || port, (req, res) => {
+app.listen(process.env.PORT || port, () => {
   console.log(`Listening to port ${port}...`);
 });

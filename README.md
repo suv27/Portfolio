@@ -1,9 +1,9 @@
 # Portfolio-SUV
-### Requirements
+## Requirements
  * Make sure you have installed `node && npm `
-  * If not then follow click here [nodeJS](https://www.npmjs.com/get-npm)。
+ * If not then follow click here [nodeJS](https://www.npmjs.com/get-npm)。
 
-# How to run it
+## How to run it
 * Clone the repo
  * Run `npm install` to get all the modules
  * All needed dependencies will be installed.
@@ -13,3 +13,7 @@
 
  * Run `npm start`
  * Now you should be able to visit `localhost:4000`
+
+
+## Demo Video
+![video](public/imgs/Demo.mov)
