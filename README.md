@@ -15,6 +15,7 @@
  * Now you should be able to visit `localhost:4000`
 
 
-## Demo Video
-![Video-Demo](public/imgs/demo.mov)
-
+## Demo Images / Video
+![img](public/imgs/mobile-view-landing-page.png)
+![img](public/imgs/web-view-landing-page.png) 
+![img](public/imgs/demo.gif)
