@@ -49,7 +49,7 @@ app.post('/contact/send', async (req, res) => {
     pass: process.env.EMAIL_PASS
   },
   tls: {
-    // This forces the connection to stay within certain network parameters
+    ciphers: 'SSLv3',
     rejectUnauthorized: false 
   }
 });
