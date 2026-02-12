@@ -6,14 +6,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
   <title>Contact Me</title>
   <%- include('partials/links.ejs') %>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
   <%- include('partials/navbar.ejs') %>
 
+  <% if (success_msg && success_msg.length > 0) { %>
+    <script>
+      Swal.fire({
+        title: 'Sent!',
+        text: '<%= success_msg %>',
+        icon: 'success',
+        confirmButtonColor: '#eece1a' // This usually matches the "text-secondary" gold/yellow
+      });
+    </script>
+  <% } %>
+
   <div id="contact">
     <h1 class="lg-heading">
       Contact
-      <span class="text-secondary">Me<span>
+      <span class="text-secondary">Me</span>
     </h1>
     <h2 class="sm-heading">
       Reach me....
@@ -21,37 +33,34 @@
 
     <div class="boxes">
       <div>
-        <span class="text-secondary">Email:
-        </span>urenav33@gmail.com
+        <span class="text-secondary">Email:</span> urenav33@gmail.com
       </div>
 
       <div>
-        <span class="text-secondary">Phone:
-        </span>(929) 228 - 9363
+        <span class="text-secondary">Phone:</span> (929) 228 - 9363
       </div>
 
       <div>
-        <a onclick="window.open('https://drive.google.com/file/d/1SiBSRp5oVNmFd_rkHpY5gLfoHYI689Xd/view?usp=sharing')">
+        <a onclick="window.open('https://drive.google.com/file/d/1aC9i2dBIiLxb_Fr_NTG5hjDBs_bl51f8/view?usp=drive_link')">
           <span>Download Resume</span>
         </a>
       </div>
     </div>
 
-    <!-- Form for direct emails -->
-    <form class="sendEmail" method="POST" action="contact/send">
+    <form class="sendEmail" method="POST" action="/contact/send">
       <div>
           <label for="nameInput">Name</label>
-          <input id="nameInput" type="text" name="name" placeholder="Your Name" required='true'>
+          <input id="nameInput" type="text" name="name" placeholder="Your Name" required>
           <br>
         </div> 
       <div>
         <label for="emailInput">Email</label>
-        <input id="emailInput" type="email" name="email" placeholder="Your Email" required='true'>
+        <input id="emailInput" type="email" name="email" placeholder="Your Email" required>
         <br>
       </div>
       <div>
         <label for="textAreaInput">Message</label>
-        <textarea id="textAreaInput" type="text" name="message" placeholder="Your Message" required='true'></textarea>
+        <textarea id="textAreaInput" name="message" placeholder="Your Message" required></textarea>
         <br>
       </div>
       <div>

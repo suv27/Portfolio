@@ -17,5 +17,5 @@
 
 ## Demo Images / Video
 ![img](public/imgs/mobile-view-landing-page.png)
-![img](public/imgs/web-view-landing-page.png) 
 ![img](public/imgs/demo.gif)
+
