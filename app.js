@@ -3,11 +3,12 @@ const express = require('express');
 const nodemailer = require('nodemailer');
 const session = require('express-session');
 const flash = require('connect-flash');
-
+const dns = require('node:dns');
 const app = express();
 const port = process.env.PORT || 4000;
 
 // Middleware
+dns.setDefaultResultOrder('ipv4first');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
@@ -40,12 +41,18 @@ app.post('/contact/send', async (req, res) => {
 
   // 2. Set up YOUR identity (the middleman)
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      user: process.env.EMAIL_USER, 
-      pass: process.env.EMAIL_PASS
-    }
-  });
+  host: 'smtp.gmail.com',
+  port: 465,
+  secure: true, // Use SSL
+  auth: {
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASS
+  },
+  tls: {
+    // This forces the connection to stay within certain network parameters
+    rejectUnauthorized: false 
+  }
+});
 
   // 3. Define the email (From YOU, To YOU, containing THEIR message)
   const mailOptions = {
