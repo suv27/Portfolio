@@ -2,6 +2,7 @@
   var form = document.getElementById('contactForm');
   var formStatus = document.getElementById('formStatus');
   var tabs = document.querySelectorAll('.tab');
+  var isGithubPages = window.location.hostname.indexOf('github.io') !== -1;
 
   if (form) {
     form.addEventListener('submit', function (event) {
@@ -21,13 +22,26 @@
         website: honeypot ? honeypot.value.trim() : ''
       };
 
+      if (isGithubPages) {
+        var mailtoLink = 'mailto:urenav33@gmail.com' +
+          '?subject=' + encodeURIComponent('Portfolio inquiry from ' + (payload.name || 'Visitor')) +
+          '&body=' + encodeURIComponent('Name: ' + payload.name + '\nEmail: ' + payload.email + '\nCompany: ' + (payload.company || 'N/A') + '\n\nMessage:\n' + payload.message);
+
+        if (formStatus) {
+          formStatus.textContent = 'Opening your mail client...';
+        }
+
+        window.location.href = mailtoLink;
+        return;
+      }
+
       if (formStatus) {
         formStatus.textContent = 'Validating secure transmission...';
       }
 
       var sendRequest = function (requestBody) {
         if (typeof window.fetch === 'function') {
-          fetch('/api/contact', {
+          fetch('./api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(requestBody)
@@ -55,7 +69,7 @@
         }
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', '/api/contact', true);
+        xhr.open('POST', './api/contact', true);
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.onreadystatechange = function () {
           if (xhr.readyState !== 4) {
