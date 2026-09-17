@@ -21,10 +21,14 @@
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#education">Education</a>
+        <a href="#interactive-features">Interactive Features</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="button button-primary" href="#contact">[ Initialize Contact ]</a>
     </header>
+
+    <!-- Live Security Telemetry Dashboard -->
+    <div id="telemetry-dashboard" class="telemetry-dashboard"></div>
 
     <main>
       <section class="hero">
@@ -158,6 +162,50 @@
         <div class="metric"><strong>AWS</strong><span>Multi-account hardening</span></div>
         <div class="metric"><strong>Kubernetes</strong><span>Cluster security controls</span></div>
         <div class="metric"><strong>Purple Team</strong><span>Threat simulation leadership</span></div>
+      </section>
+
+      <!-- Interactive Security Features Section -->
+      <section id="interactive-features" class="panel interactive-features-section">
+        <div class="section-header">
+          <p class="eyebrow">// Interactive demonstrations</p>
+          <h2>Live security architecture simulations</h2>
+        </div>
+
+        <!-- L7 Threat Mitigation Simulator -->
+        <div class="feature-container">
+          <div class="feature-header">
+            <h3>L7 Threat Mitigation Simulator</h3>
+            <p>Interactive node map of enterprise ingress architecture with real-time attack simulation</p>
+          </div>
+          <div id="threat-simulator" class="threat-simulator"></div>
+        </div>
+
+        <!-- SOAR Workflow Viewer -->
+        <div class="feature-container">
+          <div class="feature-header">
+            <h3>Automated SOAR & Triage Workflow</h3>
+            <p>Interactive pipeline demonstrating 40% MTTR reduction through automation</p>
+          </div>
+          <div id="soar-workflow-viewer" class="soar-workflow-viewer"></div>
+        </div>
+
+        <!-- Cloud Architecture Blueprint -->
+        <div class="feature-container">
+          <div class="feature-header">
+            <h3>Cloud Architecture Blueprint Explorer</h3>
+            <p>Multi-account AWS VPC network designs with Terraform/IaC configurations</p>
+          </div>
+          <div id="architecture-blueprint" class="architecture-blueprint"></div>
+        </div>
+
+        <!-- Terminal Contact Module -->
+        <div class="feature-container">
+          <div class="feature-header">
+            <h3>Terminal-Driven Contact Interface</h3>
+            <p>Developer-focused command-line interface for secure communication</p>
+          </div>
+          <div id="terminal-contact" class="terminal-contact"></div>
+        </div>
       </section>
 
       <section id="experience" class="panel">
@@ -352,5 +400,43 @@
     </main>
 
     <script src="./main.js"></script>
+    <script type="module" src="./features.js"></script>
+    <script type="module">
+      import { TelemetryDashboard, ThreatSimulator, SOARWorkflowViewer, ArchitectureBlueprint, TerminalContact } from './features.js';
+
+      // Initialize all features when DOM is ready
+      document.addEventListener('DOMContentLoaded', () => {
+        try {
+          // Initialize Telemetry Dashboard
+          const telemetryDashboard = new TelemetryDashboard('telemetry-dashboard');
+          telemetryDashboard.initialize();
+          telemetryDashboard.activate();
+
+          // Initialize Threat Simulator
+          const threatSimulator = new ThreatSimulator('threat-simulator');
+          threatSimulator.initialize();
+          threatSimulator.activate();
+
+          // Initialize SOAR Workflow Viewer
+          const soarWorkflowViewer = new SOARWorkflowViewer('soar-workflow-viewer');
+          soarWorkflowViewer.initialize();
+          soarWorkflowViewer.activate();
+
+          // Initialize Architecture Blueprint
+          const architectureBlueprint = new ArchitectureBlueprint('architecture-blueprint');
+          architectureBlueprint.initialize();
+          architectureBlueprint.activate();
+
+          // Initialize Terminal Contact
+          const terminalContact = new TerminalContact('terminal-contact');
+          terminalContact.initialize();
+          terminalContact.activate();
+
+          console.log('All security features initialized successfully');
+        } catch (error) {
+          console.error('Error initializing security features:', error);
+        }
+      });
+    </script>
   </body>
 </html>
