@@ -3,13 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Security software engineer portfolio focused on cloud security, application defense, and high-performance engineering." />
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net; connect-src 'self'; object-src 'none'; frame-ancestors 'none'; upgrade-insecure-requests" />
+    <meta name="description" content="Senior Cloud and Security Engineer portfolio for Starlyn Urena Ventura, focused on enterprise cloud defense, zero-trust security, and incident response." />
     <title>Starlyn Urena Ventura | Security Software Engineer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -20,8 +19,8 @@
       </div>
       <nav class="nav" aria-label="Main navigation">
         <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
       </nav>
       <a class="button button-primary" href="#contact">[ Initialize Contact ]</a>
@@ -32,20 +31,25 @@
         <div class="hero-copy">
           <p class="eyebrow">// Security Command Center</p>
           <h1>
-            Security Software Engineer building resilient,
-            <span class="gradient-text">high-performance digital defenses</span>.
+            <span class="gradient-text">Starlyn Urena Ventura</span>
           </h1>
+          <p class="hero-subhead">Senior Cloud &amp; Security Engineer | AWS, L7 Defense &amp; Automation SME</p>
           <p class="lede">
-            I design and secure cloud-native systems, harden application layers, and turn complex attack surfaces into measurable operational resilience.
+            I design, automate, and harden enterprise defense platforms across regulated cloud environments, with a focus on cloud security, zero-trust controls, L7 protection, and measurable risk reduction.
           </p>
+          <div class="badge-row" aria-label="Key highlights">
+            <span class="status-badge">[8+ Years Enterprise Security]</span>
+            <span class="status-badge">[MS Cybersecurity — UWF]</span>
+            <span class="status-badge">[40% MTTR Reduction]</span>
+          </div>
           <div class="hero-metrics" aria-label="Professional metrics">
-            <div><strong>8+</strong><span>Years engineering and defense</span></div>
-            <div><strong>AWS</strong><span>Cloud & WAF operations</span></div>
-            <div><strong>100+</strong><span>L7 policies and controls</span></div>
+            <div><strong>8+</strong><span>Years of cloud and security engineering</span></div>
+            <div><strong>AWS</strong><span>Cloud security operations</span></div>
+            <div><strong>40%</strong><span>MTTR reduction through automation</span></div>
           </div>
           <div class="cta-row">
             <a class="button button-primary" href="#contact">[ Initialize Contact ]</a>
-            <a class="button button-secondary" href="#projects">[ Review Architecture ]</a>
+            <a class="button button-secondary" href="#experience">[ View System Architecture ]</a>
           </div>
         </div>
 
@@ -71,96 +75,237 @@
 
       <section id="about" class="panel section-intro">
         <div class="section-header">
-          <p class="eyebrow">// Core profile</p>
-          <h2>Security engineering + systems thinking</h2>
+          <p class="eyebrow">// Professional summary</p>
+          <h2>Cloud defense, automation, and incident response</h2>
         </div>
         <div class="intro-grid">
           <article class="glass-card">
-            <p>Master’s in Cybersecurity and System Security with leadership experience across incident response, purple teaming, and production hardening.</p>
+            <p>Senior Cloud &amp; Security Engineer with 8+ years of experience designing, automating, and operating enterprise security platforms across highly regulated financial environments.</p>
           </article>
           <article class="glass-card accent">
-            <p>Focused on secure architecture, infrastructure-as-code, zero-trust enforcement, and application-layer defense across cloud platforms.</p>
+            <p>Subject-matter expert in tuning SIEM and observability telemetry, implementing zero-trust identity controls, mitigating advanced threat vectors at scale, and automating threat-hunting workflows using Python, Go, Terraform, and SOAR pipelines.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel stack-panel">
+        <div class="section-header">
+          <p class="eyebrow">// Technical stack terminal</p>
+          <h2>Core systems and tools</h2>
+        </div>
+        <div class="stack-grid">
+          <article class="glass-card code-card">
+            <h3>Languages</h3>
+            <pre>Python, Go, Bash, SQL, JavaScript</pre>
+          </article>
+          <article class="glass-card code-card">
+            <h3>Cloud &amp; Infrastructure</h3>
+            <pre>AWS, Cloudflare, Kubernetes, Docker, Terraform</pre>
+          </article>
+          <article class="glass-card code-card">
+            <h3>Security &amp; Observability</h3>
+            <pre>Datadog, Splunk, Wiz, GuardDuty, AWS WAF, OAuth 2.0 / SAML</pre>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel projects-panel" id="projects">
+        <div class="section-header">
+          <p class="eyebrow">// Featured systems</p>
+          <h2>Architecture and impact</h2>
+        </div>
+
+        <div class="project-grid">
+          <article class="glass-card project-card">
+            <p class="meta">Project / StarShell Perimeter</p>
+            <h3>Cloud security interception engine</h3>
+            <p>Threat-aware API middleware and perimeter logic for real-time L7 analysis, traffic enforcement, and signal correlation.</p>
+            <div class="tag-row">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>Cloud Security</span>
+              <span>API Protection</span>
+            </div>
+          </article>
+
+          <article class="glass-card project-card">
+            <p class="meta">Project / Automated SOAR</p>
+            <h3>Forensic triage pipeline</h3>
+            <p>Custom Go and Python microservices for automated evidence collection, alert escalation, and anomaly isolation across enterprise systems.</p>
+            <div class="tag-row">
+              <span>Go</span>
+              <span>Python</span>
+              <span>Threat Hunting</span>
+              <span>MTTR: 40%</span>
+            </div>
+          </article>
+
+          <article class="glass-card project-card">
+            <p class="meta">Project / PureProof</p>
+            <h3>Digital identity platform</h3>
+            <p>High-availability landing platform and digital identity infrastructure built for secure cloud deployment and resilient customer access.</p>
+            <div class="tag-row">
+              <span>Digital Identity</span>
+              <span>Cloud Hosting</span>
+              <span>Web Security</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="metrics-banner" aria-label="Threat dashboard metrics">
+        <div class="metric"><strong>35%</strong><span>Reduction in false-positive alerts</span></div>
+        <div class="metric"><strong>AWS</strong><span>Multi-account hardening</span></div>
+        <div class="metric"><strong>Kubernetes</strong><span>Cluster security controls</span></div>
+        <div class="metric"><strong>Purple Team</strong><span>Threat simulation leadership</span></div>
+      </section>
+
+      <section id="experience" class="panel">
+        <div class="section-header">
+          <p class="eyebrow">// Work experience</p>
+          <h2>Security engineering leadership</h2>
+        </div>
+
+        <div class="timeline">
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Sr. Security Software Engineer</h3>
+              <span>Capital One</span>
+            </div>
+            <p class="timeline-meta">New York, NY | Feb 2023 – Present</p>
+            <ul>
+              <li>Lead incident responder during major security events, coordinating triage, digital forensics, root-cause analysis, and cross-functional mitigation for critical API and cloud threats.</li>
+              <li>Architected automated SOAR playbooks with Python, Go, and Terraform to parse event artifacts, execute IP/account isolation, and automate threat hunting workflows, reducing MTTR by 40%.</li>
+              <li>Continuously evaluated and tuned Cloudflare WAF, AWS WAF, ALB, and CloudFront edge rules against OWASP Top 10, botnets, and credential stuffing campaigns targeting customer endpoints.</li>
+              <li>Managed telemetry ingestion into Datadog, Splunk, and Snowflake for ALB, CloudTrail, VPC Flow Logs, and GuardDuty; tuned rules to eliminate noise and reduce false positives by 35%.</li>
+              <li>Used Wiz and CSPM tooling to prioritize cloud misconfigurations, exposure paths, and identity risks across multi-account AWS and Kubernetes environments.</li>
+            </ul>
+          </article>
+
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Security Software Engineer</h3>
+              <span>Capital One</span>
+            </div>
+            <p class="timeline-meta">New York, NY | Feb 2021 – Jan 2023</p>
+            <ul>
+              <li>Developed custom forensic microservices in Go and Python to automate artifact extraction, log gathering, and alert routing for 24/7 on-call security escalation teams.</li>
+              <li>Analyzed high-volume HTTP/S logs in Datadog and Splunk to detect bot scrapers, brute-force attacks, and unauthorized API abuse.</li>
+              <li>Enforced identity boundaries and zero-trust policies using SAML, OAuth 2.0, and strict IAM scoping across cloud microservices.</li>
+              <li>Hardened cloud ingress routing and Kubernetes cluster network policies with platform engineering teams.</li>
+            </ul>
+          </article>
+
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Associate Software Engineer – Cyber Security</h3>
+              <span>Capital One</span>
+            </div>
+            <p class="timeline-meta">McLean, VA | Feb 2019 – Jan 2021</p>
+            <ul>
+              <li>Built static-analysis automation in Python to scan code repositories and prevent exposed secrets, API keys, and credential leaks before CI/CD deployment.</li>
+              <li>Monitored high-throughput traffic streams in Splunk and Kibana to identify indicators of compromise and user anomaly patterns.</li>
+              <li>Designed AWS CloudWatch and SNS monitors to ensure 99.9% uptime for core security logging pipelines.</li>
+            </ul>
           </article>
         </div>
       </section>
 
       <section id="capabilities" class="panel capabilities">
         <div class="section-header">
-          <p class="eyebrow">// Defensive capabilities</p>
-          <h2>Built for resilient systems and rapid response</h2>
+          <p class="eyebrow">// Core capabilities</p>
+          <h2>Built for rapid defense and resilient systems</h2>
         </div>
         <div class="card-grid">
           <article class="glass-card capability-card">
             <div class="card-icon icon-shield"></div>
-            <h3>L7 Defense & WAF</h3>
-            <p>Layer 7 protection, policy tuning, rate limiting, bot defense, and upstream abuse reduction.</p>
+            <h3>Cloud & Edge Security</h3>
+            <p>Cloudflare WAF tuning, AWS WAF, ALB, CloudFront hardening, and API perimeter defense.</p>
           </article>
           <article class="glass-card capability-card">
             <div class="card-icon icon-response"></div>
             <h3>SOAR & Incident Response</h3>
-            <p>Threat triage, playbook automation, and escalation workflows that reduce mean time to recovery.</p>
+            <p>Automation flows, forensic response, alert enrichment, playbooks, and threat triage.</p>
           </article>
           <article class="glass-card capability-card">
             <div class="card-icon icon-cloud"></div>
-            <h3>Cloud Network Fabric</h3>
-            <p>Micro-segmentation, account isolation, secure IAM design, and infrastructure security guardrails.</p>
+            <h3>Zero-Trust & IAM</h3>
+            <p>OAuth/SAML policy enforcement, strict IAM scoping, and identity boundary design.</p>
           </article>
           <article class="glass-card capability-card">
             <div class="card-icon icon-observe"></div>
             <h3>SIEM & Observability</h3>
-            <p>Telemetry pipelines, detection engineering, and real-time visibility across cloud and application workloads.</p>
+            <p>Datadog, Splunk, Snowflake, CloudTrail, VPC Flow Logs, and security telemetry design.</p>
           </article>
         </div>
       </section>
 
-      <section id="projects" class="panel projects">
+      <section id="education" class="panel">
         <div class="section-header">
-          <p class="eyebrow">// Featured system builds</p>
-          <h2>Architecture and impact</h2>
+          <p class="eyebrow">// Education & certifications</p>
+          <h2>Academic foundation and cloud credentials</h2>
         </div>
-        <div class="project-layout">
-          <div class="blueprint-card glass-card">
-            <div class="tabs" aria-label="Project views">
-              <button class="tab active" type="button">Architecture</button>
-              <button class="tab" type="button">Impact Metrics</button>
-            </div>
-            <div class="diagram">
-              <span class="node aws">AWS</span>
-              <span class="node cf">Cloudflare</span>
-              <span class="node py">Python</span>
-              <span class="node waf">WAF</span>
-              <div class="diagram-lines"></div>
-            </div>
-          </div>
-
-          <div class="case-study-list">
-            <article class="glass-card project-card">
-              <p class="meta">Project / Zero-trust edge</p>
-              <h3>Application perimeter hardening</h3>
-              <ul>
-                <li>Implemented layered WAF controls and bot mitigation.</li>
-                <li>Reduced noisy alert volume and accelerated triage workflows.</li>
-                <li>Protected APIs with deterministic access and observability controls.</li>
-              </ul>
-            </article>
-            <article class="glass-card project-card">
-              <p class="meta">Project / Cloud resilience</p>
-              <h3>Multi-account cloud security operations</h3>
-              <ul>
-                <li>Standardized IAM, VPC segmentation, and secure delivery pipelines.</li>
-                <li>Improved detection quality and automated escalation response.</li>
-                <li>Delivered secure-by-default configurations for production workloads.</li>
-              </ul>
-            </article>
-          </div>
+        <div class="education-grid">
+          <article class="glass-card info-card">
+            <h3>Master's in Cybersecurity / Software and System Security</h3>
+            <p>University of West Florida</p>
+            <p class="muted">Graduated Dec 2023</p>
+          </article>
+          <article class="glass-card info-card">
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>Earned 2020</p>
+          </article>
+          <article class="glass-card info-card">
+            <h3>B.S. in Computer Science</h3>
+            <p>Lehman College, CUNY</p>
+            <p class="muted">Graduated Dec 2018</p>
+          </article>
         </div>
       </section>
 
-      <section class="metrics-banner" aria-label="Impact metrics">
-        <div class="metric"><strong>40%</strong><span>MTTR reduction</span></div>
-        <div class="metric"><strong>35%</strong><span>Noise elimination</span></div>
-        <div class="metric"><strong>Master’s</strong><span>Cybersecurity & system security</span></div>
-        <div class="metric"><strong>Bank-scale</strong><span>IR & purple team leadership</span></div>
+      <section class="panel">
+        <div class="section-header">
+          <p class="eyebrow">// Additional experience</p>
+          <h2>Internships and contributions</h2>
+        </div>
+
+        <div class="timeline compact">
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Software Engineer Intern</h3>
+              <span>Office of the Mayor</span>
+            </div>
+            <p class="timeline-meta">New York, NY | Jan 2018 – Sep 2018</p>
+            <ul>
+              <li>Developed SQL stored procedures and functions to streamline backend data processing and improve frontend data flow.</li>
+              <li>Designed a responsive user interface using ASP, HTML, CSS, and Bootstrap for accessibility and cross-browser compatibility.</li>
+            </ul>
+          </article>
+
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Software Engineer Intern</h3>
+              <span>Killer Snails LLC</span>
+            </div>
+            <p class="timeline-meta">New York, NY | Jun 2018 – Aug 2018</p>
+            <ul>
+              <li>Modernized the company’s digital journal for responsive, cross-browser performance.</li>
+              <li>Implemented an educational game using PhaserJS and collaborated on codebase improvements.</li>
+            </ul>
+          </article>
+
+          <article class="glass-card timeline-item">
+            <div class="timeline-head">
+              <h3>Open Source Contributions</h3>
+              <span>Volunteer</span>
+            </div>
+            <p class="timeline-meta">Oct 2019</p>
+            <ul>
+              <li>Improved Python test automation by adding 50+ unit tests and raising coverage by 30%.</li>
+              <li>Worked with CI/CD tooling including GitHub Actions to improve reliability and consistency.</li>
+            </ul>
+          </article>
+        </div>
       </section>
 
       <section id="contact" class="panel contact-section">
@@ -171,6 +316,7 @@
 
         <div class="contact-grid">
           <form id="contactForm" class="contact-form glass-card" novalidate>
+            <div class="terminal-banner">[system@starlyn-security ~]$ send-message --from [User Email]</div>
             <label>
               <span>[input:name]</span>
               <input id="name" name="name" type="text" placeholder="Enter your name" required />
@@ -185,7 +331,7 @@
             </label>
             <label>
               <span>[input:message]</span>
-              <textarea id="message" name="message" rows="5" placeholder="Describe the challenge, architecture, or initiative." required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Describe the problem, use case, or initiative." required></textarea>
             </label>
             <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <button class="button button-primary" type="submit">[ Send Secure Message ]</button>
@@ -195,15 +341,16 @@
           <aside class="glass-card contact-side">
             <h3>Connect</h3>
             <ul class="connect-list">
-              <li><a href="mailto:urenav33@gmail.com">urenav33@gmail.com</a></li>
               <li><a href="https://www.linkedin.com/in/suv27" target="_blank" rel="noreferrer">LinkedIn</a></li>
               <li><a href="https://github.com/suv27" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a href="tel:+19292289363">(929)-228-9363</a></li>
+              <li><a href="mailto:urenav33@gmail.com">urenav33@gmail.com</a></li>
             </ul>
           </aside>
         </div>
       </section>
     </main>
 
-    <script src="/main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

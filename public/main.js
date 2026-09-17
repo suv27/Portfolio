@@ -7,6 +7,8 @@
     form.addEventListener('submit', function (event) {
       event.preventDefault();
 
+      var isGithubPages = /github\.io/i.test(window.location.hostname || '');
+
       var nameInput = form.querySelector('#name');
       var emailInput = form.querySelector('#email');
       var companyInput = form.querySelector('#company');
@@ -25,7 +27,32 @@
         formStatus.textContent = 'Validating secure transmission...';
       }
 
+      var fallbackToMailto = function () {
+        var recipient = 'urenav33@gmail.com';
+        var subject = encodeURIComponent('Portfolio inquiry from ' + (nameInput ? nameInput.value.trim() || 'Website Visitor' : 'Website Visitor'));
+        var company = companyInput ? companyInput.value.trim() : '';
+        var body = [
+          'Name: ' + (nameInput ? nameInput.value.trim() : ''),
+          'Email: ' + (emailInput ? emailInput.value.trim() : ''),
+          company ? 'Company: ' + company : '',
+          '',
+          'Message:',
+          messageInput ? messageInput.value.trim() : ''
+        ].filter(Boolean).join('\n');
+
+        window.location.href = 'mailto:' + recipient + '?subject=' + subject + '&body=' + encodeURIComponent(body);
+        if (formStatus) {
+          formStatus.textContent = 'Opening your mail app to send the message.';
+        }
+      };
+
       var sendRequest = function (requestBody) {
+        if (isGithubPages) {
+          form.reset();
+          fallbackToMailto();
+          return;
+        }
+
         if (typeof window.fetch === 'function') {
           fetch('/api/contact', {
             method: 'POST',
@@ -48,6 +75,12 @@
             })
             .catch(function (error) {
               if (formStatus) {
+                if (isGithubPages || (error && error.message && /Failed to fetch|NetworkError|404/i.test(error.message))) {
+                  form.reset();
+                  fallbackToMailto();
+                  return;
+                }
+
                 formStatus.textContent = error && error.message ? error.message : 'Something went wrong.';
               }
             });
@@ -74,6 +107,12 @@
             if (formStatus) {
               formStatus.textContent = 'Secure message transmitted successfully.';
             }
+            return;
+          }
+
+          if (isGithubPages || xhr.status === 404) {
+            form.reset();
+            fallbackToMailto();
             return;
           }
 
