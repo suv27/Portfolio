@@ -532,6 +532,1263 @@ main {
   color: var(--text); border-bottom: 1px solid rgba(79,172,254,0.28); padding-bottom: 4px;
 }
 
+/* ===== TELEMERY DASHBOARD ===== */
+.telemetry-dashboard {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(7, 11, 18, 0.95);
+  border-bottom: 1px solid rgba(79, 172, 254, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 8px 20px;
+  font-family: 'Fira Code', monospace;
+}
+
+.telemetry-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.telemetry-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  white-space: nowrap;
+}
+
+.telemetry-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--cyan-strong);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.telemetry-timestamp {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.telemetry-metrics {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.telemetry-metric {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.metric-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metric-value {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  color: var(--cyan-strong);
+  font-weight: 600;
+}
+
+.metric-number {
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.metric-number.value-updated {
+  color: var(--green);
+}
+
+.metric-unit {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+/* ===== INTERACTIVE FEATURES SECTION ===== */
+.interactive-features-section {
+  margin-top: 60px;
+}
+
+.feature-container {
+  margin-bottom: 40px;
+}
+
+.feature-header {
+  margin-bottom: 20px;
+}
+
+.feature-header h3 {
+  margin: 0 0 8px;
+  color: var(--cyan-strong);
+  font-size: 1.3rem;
+}
+
+.feature-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===== THREAT SIMULATOR ===== */
+.threat-simulator-container {
+  background: rgba(8, 12, 18, 0.9);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  font-family: 'Fira Code', monospace;
+}
+
+.simulator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.simulator-header h3 {
+  margin: 0;
+  color: var(--cyan-strong);
+  font-size: 1.1rem;
+}
+
+.simulator-controls {
+  display: flex;
+  gap: 12px;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  background: rgba(79, 172, 254, 0.1);
+  color: var(--cyan-strong);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  transition: all 0.2s ease;
+}
+
+.btn:hover {
+  background: rgba(79, 172, 254, 0.2);
+  border-color: var(--cyan-strong);
+}
+
+.simulator-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.attack-vectors-panel h4,
+.traffic-panel h4 {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.attack-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attack-vector {
+  padding: 12px;
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  background: rgba(79, 172, 254, 0.05);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.attack-vector:hover {
+  background: rgba(79, 172, 254, 0.15);
+  border-color: var(--cyan-strong);
+}
+
+.attack-name {
+  display: block;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.attack-severity {
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+
+.severity-critical { border-left: 3px solid #ff4444; }
+.severity-high { border-left: 3px solid #ff8800; }
+.severity-medium { border-left: 3px solid #ffcc00; }
+.severity-low { border-left: 3px solid #44ff44; }
+
+.network-visualization {
+  background: rgba(5, 8, 12, 0.8);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  min-height: 300px;
+  position: relative;
+}
+
+.network-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.network-connection {
+  stroke: rgba(79, 172, 254, 0.3);
+  stroke-width: 1;
+  transition: stroke 0.3s ease;
+}
+
+.connection-allowed { stroke: var(--green); }
+.connection-blocked { stroke: #ff4444; stroke-width: 2; }
+.connection-filtered { stroke: #ffcc00; stroke-dasharray: 4; }
+
+.network-node {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.network-node:hover {
+  opacity: 0.8;
+}
+
+.node-circle {
+  fill: rgba(79, 172, 254, 0.2);
+  stroke: var(--cyan-strong);
+  stroke-width: 1;
+}
+
+.node-active .node-circle { fill: rgba(88, 214, 141, 0.2); stroke: var(--green); }
+.node-blocked .node-circle { fill: rgba(255, 68, 68, 0.2); stroke: #ff4444; }
+.node-warning .node-circle { fill: rgba(255, 204, 0, 0.2); stroke: #ffcc00; }
+
+.node-label {
+  fill: var(--text);
+  font-size: 3px;
+  font-family: 'Fira Code', monospace;
+}
+
+.node-icon {
+  fill: var(--muted);
+  font-size: 4px;
+}
+
+.traffic-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.traffic-flows {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.traffic-flow {
+  padding: 8px;
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  background: rgba(79, 172, 254, 0.05);
+  border-radius: 6px;
+  font-size: 0.75rem;
+}
+
+.flow-allowed { border-left: 2px solid var(--green); }
+.flow-blocked { border-left: 2px solid #ff4444; }
+.flow-filtered { border-left: 2px solid #ffcc00; }
+
+.flow-path {
+  display: block;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.flow-volume,
+.flow-status {
+  display: inline-block;
+  color: var(--muted);
+  margin-right: 8px;
+}
+
+.traffic-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  background: rgba(5, 8, 12, 0.8);
+  border-radius: 8px;
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+}
+
+.stat-label { color: var(--muted); }
+.stat-value { color: var(--cyan-strong); font-weight: 600; }
+
+.simulator-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.status-message {
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* ===== SOAR WORKFLOW VIEWER ===== */
+.soar-workflow-container {
+  background: rgba(8, 12, 18, 0.9);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  font-family: 'Fira Code', monospace;
+}
+
+.workflow-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.workflow-header h3 {
+  margin: 0;
+  color: var(--cyan-strong);
+  font-size: 1.1rem;
+}
+
+.workflow-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.workflow-selector {
+  padding: 8px 12px;
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  background: rgba(79, 172, 254, 0.1);
+  color: var(--text);
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.workflow-info {
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(5, 8, 12, 0.8);
+  border-radius: 12px;
+}
+
+.workflow-description {
+  margin: 0 0 12px;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.workflow-metrics {
+  display: flex;
+  gap: 24px;
+}
+
+.workflow-visualization {
+  margin-bottom: 20px;
+}
+
+.workflow-steps {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  padding: 20px 0;
+}
+
+.workflow-step {
+  min-width: 200px;
+  padding: 16px;
+  background: rgba(79, 172, 254, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.workflow-step:hover {
+  background: rgba(79, 172, 254, 0.1);
+}
+
+.step-pending { border-color: rgba(79, 172, 254, 0.2); }
+.step-in-progress { border-color: #ffcc00; background: rgba(255, 204, 0, 0.1); }
+.step-completed { border-color: var(--green); background: rgba(88, 214, 141, 0.1); }
+.step-failed { border-color: #ff4444; background: rgba(255, 68, 68, 0.1); }
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.step-icon { font-size: 1.2rem; }
+.step-number {
+  background: rgba(79, 172, 254, 0.2);
+  color: var(--cyan-strong);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.step-name {
+  flex: 1;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.step-duration {
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.step-description {
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.step-status {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.step-connector {
+  width: 40px;
+  height: 2px;
+  background: rgba(79, 172, 254, 0.3);
+  margin: 0 -20px;
+  align-self: center;
+}
+
+.workflow-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.execution-status {
+  margin-bottom: 12px;
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.execution-progress {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 8px;
+  background: rgba(79, 172, 254, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--cyan), var(--cyan-strong));
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+  font-weight: 600;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ===== ARCHITECTURE BLUEPRINT ===== */
+.architecture-blueprint-container {
+  background: rgba(8, 12, 18, 0.9);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  font-family: 'Fira Code', monospace;
+}
+
+.blueprint-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.blueprint-header h3 {
+  margin: 0;
+  color: var(--cyan-strong);
+  font-size: 1.1rem;
+}
+
+.blueprint-controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-view {
+  padding: 6px 12px;
+  font-size: 0.75rem;
+}
+
+.btn-view.active {
+  background: rgba(79, 172, 254, 0.2);
+  border-color: var(--cyan-strong);
+}
+
+.blueprint-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding: 6px;
+  background: rgba(5, 8, 12, 0.8);
+  border-radius: 12px;
+  border: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  border: none;
+  background: transparent;
+  color: var(--muted);
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.tab-btn:hover {
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background: rgba(79, 172, 254, 0.15);
+  color: var(--cyan-strong);
+}
+
+.blueprint-content {
+  min-height: 400px;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.vpc-overview {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.vpc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.vpc-card {
+  padding: 16px;
+  background: rgba(79, 172, 254, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vpc-card:hover {
+  background: rgba(79, 172, 254, 0.1);
+  border-color: var(--cyan-strong);
+}
+
+.vpc-type-production { border-left: 3px solid var(--green); }
+.vpc-type-staging { border-left: 3px solid #ffcc00; }
+.vpc-type-dev { border-left: 3px solid #ff4444; }
+
+.vpc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.vpc-name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.vpc-cidr {
+  color: var(--cyan-strong);
+  font-size: 0.75rem;
+}
+
+.vpc-details {
+  display: flex;
+  gap: 12px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.vpc-visualization {
+  background: rgba(5, 8, 12, 0.8);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  min-height: 300px;
+  padding: 20px;
+}
+
+.visualization-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.vpc-network-diagram {
+  height: 100%;
+}
+
+.vpc-container {
+  position: relative;
+  height: 100%;
+}
+
+.vpc-boundary {
+  border: 2px dashed rgba(79, 172, 254, 0.3);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  background: rgba(79, 172, 254, 0.02);
+}
+
+.vpc-label {
+  position: absolute;
+  top: -12px;
+  left: 12px;
+  background: rgba(5, 8, 12, 0.9);
+  padding: 4px 8px;
+  color: var(--cyan-strong);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.vpc-cidr-label {
+  position: absolute;
+  top: -12px;
+  right: 12px;
+  background: rgba(5, 8, 12, 0.9);
+  padding: 4px 8px;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.subnets-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.subnet-node {
+  padding: 12px;
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 8px;
+  background: rgba(79, 172, 254, 0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.subnet-node:hover {
+  background: rgba(79, 172, 254, 0.1);
+}
+
+.subnet-public { border-color: var(--green); }
+.subnet-private { border-color: #ffcc00; }
+.subnet-isolated { border-color: #ff4444; }
+
+.subnet-name {
+  display: block;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.subnet-cidr,
+.subnet-az {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.subnet-legend {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.legend-color.public { background: var(--green); }
+.legend-color.private { background: #ffcc00; }
+.legend-color.isolated { background: #ff4444; }
+
+.tgw-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tgw-diagram {
+  background: rgba(5, 8, 12, 0.8);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  min-height: 300px;
+}
+
+.tgw-central {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tgw-node {
+  background: rgba(79, 172, 254, 0.1);
+  border: 2px solid var(--cyan-strong);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.tgw-name {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-bottom: 4px;
+}
+
+.tgw-id {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.tgw-attachments {
+  position: absolute;
+  inset: 0;
+}
+
+.tgw-attachment {
+  position: absolute;
+}
+
+.attachment-line {
+  position: absolute;
+  width: 2px;
+  height: 60px;
+  background: rgba(79, 172, 254, 0.3);
+  top: 50%;
+  left: 50%;
+  transform-origin: top center;
+}
+
+.attachment-node {
+  position: absolute;
+  background: rgba(79, 172, 254, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  min-width: 120px;
+}
+
+.attachment-name {
+  display: block;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.attachment-cidr {
+  display: block;
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+.tgw-details {
+  background: rgba(5, 8, 12, 0.8);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.tgw-details h4 {
+  margin: 0 0 16px;
+  color: var(--cyan-strong);
+  font-size: 0.9rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(79, 172, 254, 0.1);
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.detail-value {
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.irsa-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.irsa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.irsa-config {
+  padding: 16px;
+  background: rgba(79, 172, 254, 0.05);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.irsa-config:hover {
+  background: rgba(79, 172, 254, 0.1);
+  border-color: var(--cyan-strong);
+}
+
+.irsa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.irsa-service-account {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.irsa-namespace {
+  color: var(--cyan-strong);
+  font-size: 0.75rem;
+}
+
+.irsa-role {
+  margin-bottom: 8px;
+  font-size: 0.75rem;
+}
+
+.role-label {
+  color: var(--muted);
+  margin-right: 8px;
+}
+
+.role-arn {
+  color: var(--text);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+}
+
+.irsa-policies {
+  margin-top: 8px;
+}
+
+.policies-label {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-bottom: 4px;
+}
+
+.policy-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.policy-tag {
+  background: rgba(79, 172, 254, 0.1);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.7rem;
+  color: var(--cyan-strong);
+}
+
+.irsa-details {
+  background: rgba(5, 8, 12, 0.8);
+  border: 1px solid rgba(79, 172, 254, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.irsa-details h4 {
+  margin: 0 0 12px;
+  color: var(--cyan-strong);
+  font-size: 0.9rem;
+}
+
+.irsa-details p {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.irsa-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.benefit {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(79, 172, 254, 0.05);
+  border-radius: 8px;
+}
+
+.benefit-icon {
+  font-size: 1.2rem;
+}
+
+.benefit-text {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.blueprint-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.blueprint-info {
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+  text-align: center;
+  font-family: 'Fira Code', monospace;
+}
+
+/* ===== TERMINAL CONTACT ===== */
+.terminal-contact-container {
+  background: rgba(8, 12, 18, 0.95);
+  border: 1px solid rgba(79, 172, 254, 0.3);
+  border-radius: 16px;
+  font-family: 'Fira Code', monospace;
+  overflow: hidden;
+}
+
+.terminal-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(5, 8, 12, 0.9);
+  border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.terminal-buttons {
+  display: flex;
+  gap: 8px;
+  margin-right: 16px;
+}
+
+.terminal-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.terminal-button.close { background: #ff5f56; }
+.terminal-button.minimize { background: #ffbd2e; }
+.terminal-button.maximize { background: #27ca40; }
+
+.terminal-title {
+  flex: 1;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.terminal-body {
+  padding: 16px;
+  min-height: 400px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.terminal-output {
+  margin-bottom: 16px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.terminal-line {
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.terminal-system {
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+}
+
+.terminal-command {
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+.terminal-success {
+  color: var(--green);
+  font-size: 0.85rem;
+}
+
+.terminal-error {
+  color: #ff4444;
+  font-size: 0.85rem;
+}
+
+.terminal-info {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: rgba(5, 8, 12, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.terminal-prompt {
+  color: var(--cyan-strong);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.terminal-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-family: 'Fira Code', monospace;
+  outline: none;
+}
+
+.terminal-input::placeholder {
+  color: rgba(159, 183, 204, 0.4);
+}
+
+.terminal-footer {
+  padding: 8px 16px;
+  background: rgba(5, 8, 12, 0.9);
+  border-top: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.terminal-info {
+  color: var(--muted);
+  font-size: 0.7rem;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 980px) {
+  .telemetry-dashboard {
+    position: relative;
+  }
+
+  .telemetry-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .telemetry-metrics {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .simulator-body {
+    grid-template-columns: 1fr;
+  }
+
+  .vpc-overview,
+  .tgw-overview,
+  .irsa-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-steps {
+    flex-direction: column;
+  }
+
+  .step-connector {
+    width: 2px;
+    height: 20px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .telemetry-dashboard {
+    padding: 8px 12px;
+  }
+
+  .telemetry-metrics {
+    gap: 16px;
+  }
+
+  .telemetry-metric {
+    min-width: 120px;
+  }
+
+  .workflow-header,
+  .blueprint-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .workflow-controls,
+  .blueprint-controls {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .workflow-selector {
+    flex: 1;
+  }
+
+  .blueprint-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    flex: 1;
+    min-width: 100px;
+  }
+}
+
 @media (max-width: 980px) {
   .hero, .project-layout, .contact-grid, .education-grid, .stack-grid, .project-grid { grid-template-columns: 1fr; }
   .card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
