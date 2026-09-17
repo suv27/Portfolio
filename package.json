@@ -1,26 +1,38 @@
 {
-  "name": "suvporfolio",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "portfolio-security-engineer",
+  "version": "2.0.0",
+  "description": "Security-focused portfolio for a software engineer",
+  "main": "dist/server.js",
+  "type": "module",
   "scripts": {
-    "sass": "node-sass -w public/scss/ -o public/css/ --recursive",
-    "start": "nodemon app.js"
+    "dev": "tsx watch src/server.ts",
+    "build": "tsc && mkdir -p dist/public && cp -R public/. dist/public/",
+    "start": "node dist/server.js",
+    "test": "vitest run tests/unit",
+    "test:unit": "vitest run tests/unit",
+    "test:e2e": "playwright test",
+    "test:security": "node --test tests/security-load.mjs",
+    "lint": "tsc --noEmit"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Starlyn Urena Ventura",
+  "license": "MIT",
   "dependencies": {
-    "connect-flash": "^0.1.1",
     "dotenv": "^17.2.4",
-    "ejs": "^4.0.1",
-    "express": "^5.2.1",
-    "express-session": "^1.19.0",
-    "ffmpeg": "^0.0.4",
-    "nodemailer": "^8.0.1",
-    "nodemon": "^3.1.11"
+    "express": "^5.1.0",
+    "express-rate-limit": "^7.0.0",
+    "helmet": "^8.0.0",
+    "nodemailer": "^7.0.0"
   },
   "devDependencies": {
-    "sass": "^1.97.3",
-    "sass-loader": "^16.0.7"
+    "@playwright/test": "^1.53.2",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.15.29",
+    "@types/nodemailer": "^6.4.17",
+    "@types/supertest": "^7.2.1",
+    "autocannon": "^8.0.0",
+    "supertest": "^7.0.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3",
+    "vitest": "^3.0.0"
   }
 }

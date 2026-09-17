@@ -1,4 +1,10 @@
 node_modules/
-*.DS_Store
-app.js
+dist/
+playwright-report/
+test-results/
+coverage/
 .env
+.env.*
+!.env.example
+*.log
+*.DS_Store
